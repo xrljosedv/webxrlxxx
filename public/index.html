@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f172a">
+  <title>Xrimuix Apis - API REST Gratis para Desarrolladores</title>
+  <meta name="description" content="Xrimuix Apis proporciona API REST gratuitas, rápidas y confiables para desarrolladores. Creado por xrljosedv.">
+  <meta name="keywords" content="api gratis, rest api, xrimuix apis, xrljosedv, api para desarrolladores">
+  <meta name="author" content="xrljosedv">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="manifest" href="/site.webmanifest">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link href="/assets/css/main.css" rel="stylesheet">
+</head>
+<body class="bg-slate-900">
+  <nav class="navbar fixed w-full z-50">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center pulse-glow">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <span class="text-lg font-bold gradient-text">Xrimuix Apis</span>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="/" class="text-gray-300 hover:text-white transition-colors">Inicio</a>
+          <a href="/get-docs" class="text-gray-300 hover:text-white transition-colors">Docs GET</a>
+          <a href="/post-docs" class="text-gray-300 hover:text-white transition-colors">Docs POST</a>
+          <a href="/stat" class="text-gray-300 hover:text-white transition-colors">Estado</a>
+          <a href="/donasi" class="text-gray-300 hover:text-white transition-colors">Donar</a>
+        </div>
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="text-gray-300 hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-gray-800">
+      <div class="container mx-auto px-4 py-3 space-y-2">
+        <a href="/" class="block py-2 text-gray-300 hover:text-white">Inicio</a>
+        <a href="/get-docs" class="block py-2 text-gray-300 hover:text-white">Docs GET</a>
+        <a href="/post-docs" class="block py-2 text-gray-300 hover:text-white">Docs POST</a>
+        <a href="/stat" class="block py-2 text-gray-300 hover:text-white">Estado</a>
+        <a href="/donasi" class="block py-2 text-gray-300 hover:text-white">Donar</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="text-white min-h-screen flex items-center justify-center pt-16 relative overflow-hidden" style="background: radial-gradient(ellipse at top, #1e293b 0%, #0f172a 45%, #020617 100%);">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-900/20"></div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+      <div class="max-w-4xl mx-auto">
+        <div class="inline-block px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 text-sm font-medium mb-8 floating" data-aos="fade-down">
+          🚀 Plataforma API de Nueva Generación
+        </div>
+        <h1 class="text-5xl md:text-7xl font-bold mb-8 leading-tight hero-text" data-aos="fade-up">Xrimuix Apis</h1>
+        <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+          API REST gratuitas, rápidas y confiables para tus proyectos. Creado por xrljosedv.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center" data-aos="fade-up" data-aos-delay="200">
+          <a href="/get-docs" class="btn-primary inline-block text-white px-10 py-4 rounded-xl text-lg font-semibold">
+            📖 Documentación GET
+          </a>
+          <a href="/post-docs" class="btn-primary inline-block text-white px-10 py-4 rounded-xl text-lg font-semibold">
+            📝 Documentación POST
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="py-32 text-white" style="background: radial-gradient(ellipse at top, #1e293b 0%, #0f172a 45%, #020617 100%);">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-20" data-aos="fade-up">
+        <div class="inline-block px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 text-sm font-medium mb-6">
+          ✨ Características Premium
+        </div>
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 hero-text">Diseñado para la Excelencia</h2>
+        <p class="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">Todo lo que necesitas para construir y escalar tu aplicación</p>
+      </div>
+      <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+        <div class="glass-card p-10 rounded-3xl group" data-aos="fade-up" data-aos-delay="0">
+          <div class="mb-6">
+            <i class="ri-flashlight-line feature-icon text-4xl block mb-4 group-hover:scale-110 transition-transform duration-300"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 text-white">Velocidad Relámpago</h3>
+          <p class="text-gray-400 leading-relaxed">Infraestructura global que garantiza tiempos de respuesta rápidos.</p>
+        </div>
+        <div class="glass-card p-10 rounded-3xl group" data-aos="fade-up" data-aos-delay="100">
+          <div class="mb-6">
+            <i class="ri-user-smile-line feature-icon text-4xl block mb-4 group-hover:scale-110 transition-transform duration-300"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 text-white">Fácil de Usar</h3>
+          <p class="text-gray-400 leading-relaxed">Documentación completa para una experiencia de desarrollo perfecta.</p>
+        </div>
+        <div class="glass-card p-10 rounded-3xl group" data-aos="fade-up" data-aos-delay="200">
+          <div class="mb-6">
+            <i class="ri-bar-chart-box-line feature-icon text-4xl block mb-4 group-hover:scale-110 transition-transform duration-300"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 text-white">Gratis para Siempre</h3>
+          <p class="text-gray-400 leading-relaxed">Acceso ilimitado sin necesidad de registro ni límites.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="space-y-6">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <span class="font-bold text-xl gradient-text">Xrimuix Apis</span>
+          </div>
+          <p class="text-gray-400 text-base leading-relaxed">
+            Construyendo el futuro del desarrollo de APIs con soluciones modernas.
+          </p>
+          <div class="flex space-x-4">
+            <a href="https://github.com/xrljosedv" class="w-10 h-10 rounded-lg bg-gray-800/50 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-700/50 transition-all duration-300">
+              <i class="ri-github-fill text-xl"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-lg bg-gray-800/50 flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-700/50 transition-all duration-300">
+              <i class="ri-twitter-fill text-xl"></i>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-base font-bold uppercase tracking-wider mb-6 text-white">Soporte</h4>
+          <ul class="space-y-3">
+            <li><a href="/support" class="text-gray-400 hover:text-white transition-colors duration-300">Centro de Ayuda</a></li>
+            <li><a href="/contributor" class="text-gray-400 hover:text-white transition-colors duration-300">Contribuidores</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-base font-bold uppercase tracking-wider mb-6 text-white">Otros</h4>
+          <ul class="space-y-3">
+            <li><a href="/stat" class="text-gray-400 hover:text-white transition-colors duration-300">Estadísticas</a></li>
+            <li><a href="/donasi" class="text-gray-400 hover:text-white transition-colors duration-300">Donaciones</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-base font-bold uppercase tracking-wider mb-6 text-white">Legal</h4>
+          <ul class="space-y-3">
+            <li><a href="/tos" class="text-gray-400 hover:text-white transition-colors duration-300">Términos de Servicio</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800/50 mt-12 pt-8 text-center">
+        <p class="text-gray-400">
+          © <span class="current-year">2024</span> Xrimuix Apis. Creado por xrljosedv. Todos los derechos reservados.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

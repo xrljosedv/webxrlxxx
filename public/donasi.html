@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f172a">
+  <title>Xrimuix Apis - Donaciones</title>
+  <meta name="description" content="Apoya el desarrollo de Xrimuix Apis con tu donación.">
+  <meta name="author" content="xrljosedv">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="manifest" href="/site.webmanifest">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <script src="https://app.midtrans.com/snap/snap.js" data-client-key="Mid-client-N95EuTZMbqCa2MPa"></script>
+  <link href="/assets/css/main.css" rel="stylesheet">
+  <style>
+    .donation-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s ease;
+    }
+    .donation-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(34, 197, 94, 0.3);
+    }
+  </style>
+</head>
+<body class="bg-slate-900">
+  <nav class="navbar fixed w-full z-50">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <span class="text-lg font-bold gradient-text">Xrimuix Apis</span>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="/" class="text-gray-300 hover:text-white transition-colors">Inicio</a>
+          <a href="/get-docs" class="text-gray-300 hover:text-white transition-colors">Docs GET</a>
+          <a href="/post-docs" class="text-gray-300 hover:text-white transition-colors">Docs POST</a>
+          <a href="/stat" class="text-gray-300 hover:text-white transition-colors">Estado</a>
+          <a href="/donasi" class="text-gray-300 hover:text-white transition-colors">Donar</a>
+        </div>
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="text-gray-300 hover:text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-gray-800">
+      <div class="container mx-auto px-4 py-3 space-y-2">
+        <a href="/" class="block py-2 text-gray-300 hover:text-white">Inicio</a>
+        <a href="/get-docs" class="block py-2 text-gray-300 hover:text-white">Docs GET</a>
+        <a href="/post-docs" class="block py-2 text-gray-300 hover:text-white">Docs POST</a>
+        <a href="/stat" class="block py-2 text-gray-300 hover:text-white">Estado</a>
+        <a href="/donasi" class="block py-2 text-gray-300 hover:text-white">Donar</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="min-h-screen pt-24 pb-16 flex items-center justify-center">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Apoye Nuestro Proyecto</h1>
+        <p class="text-gray-400 max-w-xl mx-auto">Su donación nos ayuda a mantener y mejorar Xrimuix Apis para toda la comunidad.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="glass-card p-8 rounded-2xl">
+          <h2 class="text-xl font-semibold mb-6 text-white">Formulario de Donación</h2>
+          <form id="donation-form" class="space-y-6">
+            <div>
+              <label for="name" class="block text-sm font-medium mb-2 text-gray-300">Nombre</label>
+              <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white form-input" required>
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium mb-2 text-gray-300">Correo Electrónico</label>
+              <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white form-input" required>
+            </div>
+            <div>
+              <label for="amount" class="block text-sm font-medium mb-2 text-gray-300">Monto de Donación (Rp)</label>
+              <input type="number" id="amount" name="amount" min="1000" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white form-input" required placeholder="Mínimo Rp1.000">
+            </div>
+            <div>
+              <label for="comment" class="block text-sm font-medium mb-2 text-gray-300">Comentario (Opcional)</label>
+              <textarea id="comment" name="comment" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white form-input" rows="3" placeholder="Deje un mensaje de apoyo..."></textarea>
+            </div>
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAAA6dZGHl6b5dKTOR"></div>
+            <button type="submit" class="w-full btn-primary text-white px-6 py-3 rounded-lg font-medium transition-all duration-300">
+              Donar Ahora
+            </button>
+          </form>
+        </div>
+        <div>
+          <h2 class="text-xl font-semibold mb-6 text-white">Lista de Donantes</h2>
+          <div id="donation-list" class="space-y-4 max-h-[400px] overflow-y-auto"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="space-y-6">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <span class="font-bold text-xl gradient-text">Xrimuix Apis</span>
+          </div>
+          <p class="text-gray-400 text-base leading-relaxed">
+            Construyendo el futuro del desarrollo de APIs con soluciones modernas.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-base font-bold uppercase tracking-wider mb-6 text-white">Soporte</h4>
+          <ul class="space-y-3">
+            <li><a href="/support" class="text-gray-400 hover:text-white transition-colors duration-300">Centro de Ayuda</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-base font-bold uppercase tracking-wider mb-6 text-white">Otros</h4>
+          <ul class="space-y-3">
+            <li><a href="/stat" class="text-gray-400 hover:text-white transition-colors duration-300">Estadísticas</a></li>
+            <li><a href="/contributor" class="text-gray-400 hover:text-white transition-colors duration-300">Contribuidores</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-base font-bold uppercase tracking-wider mb-6 text-white">Legal</h4>
+          <ul class="space-y-3">
+            <li><a href="/tos" class="text-gray-400 hover:text-white transition-colors duration-300">Términos de Servicio</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800/50 mt-12 pt-8 text-center">
+        <p class="text-gray-400">
+          © <span class="current-year">2024</span> Xrimuix Apis. Creado por xrljosedv.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/donasi.js"></script>
+</body>
+</html>

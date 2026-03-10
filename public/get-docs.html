@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f172a">
+  <title>Xrimuix Apis - Documentación GET</title>
+  <meta name="description" content="Documentación completa de endpoints GET de Xrimuix Apis. API REST gratuita para desarrolladores.">
+  <meta name="author" content="xrljosedv">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.17.14/swagger-ui.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.17.14/swagger-ui-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.17.14/swagger-ui-standalone-preset.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.32/sweetalert2.all.min.js"></script>
+  <link href="/assets/css/main.css" rel="stylesheet">
+  <style>
+    #swagger-ui {
+      padding-top: 64px;
+      background-color: #0f172a;
+    }
+    .swagger-ui {
+      background-color: #0f172a;
+    }
+    .swagger-ui .info .title,
+    .swagger-ui .opblock-tag,
+    .swagger-ui .opblock .opblock-section-header h4 {
+      color: #e2e8f0;
+    }
+    .swagger-ui .opblock-summary-path span {
+      color: #ffffff !important;
+    }
+    .swagger-ui .parameter__name,
+    .swagger-ui .parameter__type,
+    .swagger-ui table thead tr th,
+    .swagger-ui .response-col_status,
+    .swagger-ui .responses-inner h4 {
+      color: #cbd5e1;
+    }
+    .swagger-ui .opblock.opblock-get .opblock-summary-method {
+      background: #0064c9;
+    }
+    .top-layout {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 38px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .custom-search-container input {
+      width: 300px;
+      padding: 10px 15px;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+      color: #e2e8f0;
+    }
+    .custom-search-container input:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 4px 12px rgba(59,130,246,0.3);
+    }
+  </style>
+</head>
+<body class="bg-slate-900">
+  <nav class="navbar fixed w-full z-50">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+        <div class="text-lg font-semibold text-white flex items-center space-x-3">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center pulse-glow">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <span class="gradient-text">Xrimuix Apis</span>
+        </div>
+        <a href="/" class="text-gray-400 hover:text-white transition-colors">Volver al Inicio</a>
+      </div>
+    </div>
+  </nav>
+  
+  <div id="swagger-ui"></div>
+  
+  <script src="/assets/js/get-docs.js"></script>
+</body>
+</html>
